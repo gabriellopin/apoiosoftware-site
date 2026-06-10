@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apoio Software: o primeiro sistema de acompanhamento terapêutico com Inteligência Artificial</title>
+  <meta name="description" content="O Apoio Software é o primeiro sistema de acompanhamento terapêutico com IA. Agenda, instrumentos clínicos, PEI, relatórios gerados por IA e portal da família. Tudo em um lugar, com LGPD de verdade.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======================= HEADER ======================= -->
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a href="#topo" class="brand" aria-label="Apoio Software, início">
+        <img src="assets/logo-96.png" srcset="assets/logo-96.png 1x, assets/logo-320.png 2x" alt="Logo do Apoio Software: nuvem azul entrelaçada com nuvem-coração amarela" width="42" height="42">
+        <span class="brand-name"><strong>Apoio</strong> Software</span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#apoio-inteligente">Apoio Inteligente</a>
+        <a href="#relatorios">Relatórios IA</a>
+        <a href="#instrumentos">Instrumentos</a>
+        <a href="#gestao">Gestão</a>
+        <a href="#familia">Família</a>
+        <a href="#seguranca">LGPD</a>
+      </nav>
+      <a href="https://portal.apoiosoftware.com.br" class="btn btn-outline btn-header btn-entrar">Entrar</a>
+      <a href="#demonstracao" class="btn btn-primary btn-header">Quero uma demonstração</a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+  <!-- ======================= HERO ======================= -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="glow glow-azul" data-parallax="0.14"></div>
+      <div class="glow glow-amarelo" data-parallax="0.08"></div>
+    </div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="badge reveal">Apoio Inteligente: pioneiro em IA terapêutica</p>
+        <h1 id="hero-title" class="reveal delay-1">O primeiro sistema de acompanhamento terapêutico com <span class="am">Inteligência Artificial</span>.</h1>
+        <p class="hero-sub reveal delay-2">Pergunte <em>"qual minha agenda de hoje?"</em> e o Apoio Inteligente responde com os dados reais da sua clínica. Agenda, instrumentos, PEI, sessões e relatórios, tudo em um lugar só. Adeus planilha, WhatsApp e Drive.</p>
+        <div class="hero-ctas reveal delay-3">
+          <a href="#demonstracao" class="btn btn-primary btn-lg">Quero uma demonstração</a>
+          <a href="#apoio-inteligente" class="btn btn-ghost btn-lg">Ver o Apoio Inteligente em ação ↓</a>
+        </div>
+        <p class="microprova reveal delay-4">8 instrumentos clínicos integrados · Relatórios gerados por IA · Dados pseudonimizados e criptografados (AES-256-GCM) · LGPD com consentimento explícito</p>
+        <p class="disclaimer-hero reveal delay-4">A IA não diagnostica e não altera dados sem a sua confirmação. Quem decide é sempre o profissional.</p>
+      </div>
+
+      <div class="hero-visual reveal-scale delay-2">
+        <div class="phone phone-hero" id="phone-hero" aria-label="Demonstração do chat do Apoio Inteligente">
+          <div class="phone-notch" aria-hidden="true"></div>
+          <div class="phone-screen">
+            <div class="chat-header">
+              <span class="chat-avatar"><img src="assets/logo-96.png" alt="" width="26" height="26"></span>
+              <span class="chat-title"><strong>A</strong>poio <strong class="amc">I</strong>nteligente<small>Como posso te ajudar?</small></span>
+              <span class="chat-actions" aria-hidden="true">⟳ &nbsp;–&nbsp; ✕</span>
+            </div>
+            <div class="chat-body" data-chat="autoplay">
+              <div class="msg user">qual minha agenda de hoje?</div>
+              <div class="msg typing" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="msg bot">
+                <p class="msg-title">📅 Seu dia (15/06/2026) — 6 sessões</p>
+                <ul>
+                  <li>08:00–08:50 · <b>Joaquim</b> · <i class="ok">concluída</i></li>
+                  <li>09:00–09:50 · <b>Cecília</b> · <i class="ok">concluída</i></li>
+                  <li>10:00–10:50 · <b>Bento</b> · <i class="conf">confirmada</i></li>
+                  <li>14:00–14:50 · <b>Aurora</b> · <i class="conf">confirmada</i></li>
+                  <li>15:00–15:50 · <b>Theo</b></li>
+                  <li>16:00–16:50 · <b>Liz</b> · <i class="conf">confirmada</i></li>
+                </ul>
+                <p>Parece que você tem um dia cheio hoje!</p>
+                <p class="via">VIA SUMMARIZER</p>
+              </div>
+              <div class="chips">
+                <span class="chip">Joaquim</span><span class="chip">Cecília</span><span class="chip">Bento</span><span class="chip chip-azul">Ver amanhã</span><span class="chip">Agenda da semana</span>
+              </div>
+            </div>
+            <div class="chat-footer">
+              <span class="chat-input">Pergunte algo...</span>
+              <span class="chat-send" aria-hidden="true">➤</span>
+            </div>
+          </div>
+        </div>
+        <img class="hero-mascote" data-parallax="0.05"
+             src="assets/mascote-640.png"
+             srcset="assets/mascote-640.png 1x, assets/mascote.png 2x"
+             alt="Mascote do Apoio: arara azul e amarela sorridente" width="250" height="250">
+      </div>
+    </div>
+
+    <svg class="cloud-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,90 L0,52 C40,20 92,16 132,40 C162,10 232,6 272,34 C312,8 382,4 422,32 C452,12 522,10 562,36 C602,6 672,2 712,30 C752,12 822,8 862,36 C902,10 972,6 1012,34 C1052,14 1122,10 1162,38 C1202,8 1272,6 1312,32 C1352,16 1412,22 1440,46 L1440,90 Z"/>
+    </svg>
+  </section>
+
+  <!-- ======================= APOIO INTELIGENTE EM AÇÃO ======================= -->
+  <section class="section section-ai" id="apoio-inteligente" aria-labelledby="ai-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Apoio Inteligente</p>
+        <h2 id="ai-title">Pergunte. Ele responde <span class="az">com os dados da sua clínica</span>.</h2>
+        <p class="section-sub">É o seu assistente dentro do sistema. Ele conhece a agenda, as sessões, os instrumentos aplicados e as metas de PEI dos seus pacientes. Ele responde em segundos, do jeito que você perguntaria a um colega. Só dados da sua clínica, sempre sob seu controle.</p>
+      </div>
+
+      <div class="phones-rail" tabindex="0" aria-label="Exemplos de conversas com o Apoio Inteligente. Role para o lado">
+
+        <!-- Conversa 2: VB-MAPP -->
+        <figure class="phone-card reveal">
+          <figcaption><span class="agent-tag">VIA SEARCHER</span> Instrumentos sem caçar pasta</figcaption>
+          <div class="phone">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-screen">
+              <div class="chat-header">
+                <span class="chat-avatar"><img src="assets/logo-96.png" alt="" width="26" height="26"></span>
+                <span class="chat-title"><strong>A</strong>poio <strong class="amc">I</strong>nteligente<small>Como posso te ajudar?</small></span>
+              </div>
+              <div class="chat-body" data-chat="scroll">
+                <div class="msg user">como foi o último vb-mapp da cecília?</div>
+                <div class="msg bot">
+                  <p class="msg-title">📋 Última aplicação de VB-MAPP — Cecília</p>
+                  <ul class="kv">
+                    <li>Data: <b>12/05/2026</b></li>
+                    <li>Status: <b>Concluído</b></li>
+                    <li>Marcos pontuados: <b>78/170</b></li>
+                  </ul>
+                  <p class="msg-sub">Pontuação acumulada por domínio:</p>
+                  <ul>
+                    <li>Mando: <b>7/15</b></li>
+                    <li>Tato: <b>8/15</b></li>
+                    <li>Ouvinte: <b>9/15</b></li>
+                    <li>Ecoico: <b>6/10</b></li>
+                    <li>Imitação Motora: <b>8/10</b></li>
+                  </ul>
+                  <p class="via">VIA SEARCHER</p>
+                </div>
+                <div class="chips">
+                  <span class="chip chip-azul">Comparar com a anterior</span><span class="chip">Metas do PEI</span><span class="chip">Próxima sessão</span>
+                </div>
+              </div>
+              <div class="chat-footer"><span class="chat-input">Pergunte algo...</span><span class="chat-send" aria-hidden="true">➤</span></div>
+            </div>
+          </div>
+        </figure>
+
+        <!-- Conversa 3: PEI -->
+        <figure class="phone-card reveal delay-1">
+          <figcaption><span class="agent-tag">VIA SUMMARIZER</span> PEI sempre à mão</figcaption>
+          <div class="phone">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-screen">
+              <div class="chat-header">
+                <span class="chat-avatar"><img src="assets/logo-96.png" alt="" width="26" height="26"></span>
+                <span class="chat-title"><strong>A</strong>poio <strong class="amc">I</strong>nteligente<small>Como posso te ajudar?</small></span>
+              </div>
+              <div class="chat-body" data-chat="scroll">
+                <div class="msg user">quais as metas atuais do bento?</div>
+                <div class="msg bot">
+                  <p class="msg-title">🎯 Metas ativas do PEI — Bento (3)</p>
+                  <ol class="goals">
+                    <li><b>Mando com apoio de figura</b><small>Critério de domínio: 80% em 3 sessões consecutivas</small><span class="bar"><span style="--p:65%"></span></span><small class="pct">65%</small></li>
+                    <li><b>Contato visual ao ser chamado pelo nome</b><small>Critério de domínio: 4 de 5 oportunidades</small><span class="bar"><span style="--p:80%"></span></span><small class="pct">80%</small></li>
+                    <li><b>Pareamento de objetos idênticos</b><small>Critério de domínio: 90% em 2 sessões</small><span class="bar"><span style="--p:45%"></span></span><small class="pct">45%</small></li>
+                  </ol>
+                  <p class="via">VIA SUMMARIZER</p>
+                </div>
+                <div class="chips">
+                  <span class="chip">Última sessão do Bento</span><span class="chip chip-azul">Resumo do Bento</span>
+                </div>
+              </div>
+              <div class="chat-footer"><span class="chat-input">Pergunte algo...</span><span class="chat-send" aria-hidden="true">➤</span></div>
+            </div>
+          </div>
+        </figure>
+
+        <!-- Conversa 4: Detector -->
+        <figure class="phone-card reveal delay-2">
+          <figcaption><span class="agent-tag">VIA DETECTOR</span> Ninguém fica para trás</figcaption>
+          <div class="phone">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-screen">
+              <div class="chat-header">
+                <span class="chat-avatar"><img src="assets/logo-96.png" alt="" width="26" height="26"></span>
+                <span class="chat-title"><strong>A</strong>poio <strong class="amc">I</strong>nteligente<small>Como posso te ajudar?</small></span>
+              </div>
+              <div class="chat-body" data-chat="scroll">
+                <div class="msg user">quem não vejo há mais de 14 dias?</div>
+                <div class="msg bot">
+                  <p class="msg-title">🔎 Pacientes sem sessão nos últimos 14 dias — 3 encontrados</p>
+                  <ul>
+                    <li><b>Aurora</b> · última sessão em 22/05/2026 <i class="warn">(24 dias)</i></li>
+                    <li><b>Theo</b> · última sessão em 27/05/2026 <i class="warn">(19 dias)</i></li>
+                    <li><b>Liz</b> · última sessão em 30/05/2026 <i class="warn">(16 dias)</i></li>
+                  </ul>
+                  <p>Nenhum deles tem sessão futura agendada.</p>
+                  <p class="via">VIA DETECTOR</p>
+                </div>
+                <div class="chips">
+                  <span class="chip chip-azul">Resumo da Aurora</span><span class="chip">Próximos horários livres</span><span class="chip">Meus pacientes ativos</span>
+                </div>
+              </div>
+              <div class="chat-footer"><span class="chat-input">Pergunte algo...</span><span class="chat-send" aria-hidden="true">➤</span></div>
+            </div>
+          </div>
+        </figure>
+
+        <!-- Conversa 5: Comparação ABLLS-R -->
+        <figure class="phone-card reveal delay-3">
+          <figcaption><span class="agent-tag">VIA COMPARATOR</span> Evolução em números</figcaption>
+          <div class="phone">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-screen">
+              <div class="chat-header">
+                <span class="chat-avatar"><img src="assets/logo-96.png" alt="" width="26" height="26"></span>
+                <span class="chat-title"><strong>A</strong>poio <strong class="amc">I</strong>nteligente<small>Como posso te ajudar?</small></span>
+              </div>
+              <div class="chat-body" data-chat="scroll">
+                <div class="msg user">compara as duas últimas aplicações de ablls do joaquim</div>
+                <div class="msg bot">
+                  <p class="msg-title">📊 Comparação ABLLS-R — Joaquim</p>
+                  <ul class="kv">
+                    <li>Aplicação 1: 09/02/2026 · <b>21/48</b></li>
+                    <li>Aplicação 2: 01/06/2026 · <b>29/48</b></li>
+                    <li>Diferença: <b class="up">+8 pontos</b></li>
+                  </ul>
+                  <p class="msg-sub">Variação por domínio:</p>
+                  <ul>
+                    <li>A Cooperação e Reforço: 6/12 → 9/12 <b class="up">(+3)</b></li>
+                    <li>B Atenção Visual: 7/12 → 10/12 <b class="up">(+3)</b></li>
+                    <li>D Imitação Motora: 8/12 → 10/12 <b class="up">(+2)</b></li>
+                  </ul>
+                  <p class="via">VIA COMPARATOR</p>
+                </div>
+                <div class="chips">
+                  <span class="chip">Metas do PEI</span><span class="chip chip-azul">Como foi a última sessão</span>
+                </div>
+              </div>
+              <div class="chat-footer"><span class="chat-input">Pergunte algo...</span><span class="chat-send" aria-hidden="true">➤</span></div>
+            </div>
+          </div>
+        </figure>
+
+        <!-- Conversa 1 (variação): agenda do dia -->
+        <figure class="phone-card reveal delay-4">
+          <figcaption><span class="agent-tag">VIA SUMMARIZER</span> Agenda na ponta da língua</figcaption>
+          <div class="phone">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-screen">
+              <div class="chat-header">
+                <span class="chat-avatar"><img src="assets/logo-96.png" alt="" width="26" height="26"></span>
+                <span class="chat-title"><strong>A</strong>poio <strong class="amc">I</strong>nteligente<small>Como posso te ajudar?</small></span>
+              </div>
+              <div class="chat-body" data-chat="scroll">
+                <div class="msg user">qual minha agenda de hoje?</div>
+                <div class="msg bot">
+                  <p class="msg-title">📅 Seu dia (15/06/2026) — 6 sessões</p>
+                  <ul>
+                    <li>08:00–08:50 · <b>Joaquim</b> · <i class="ok">concluída</i></li>
+                    <li>09:00–09:50 · <b>Cecília</b> · <i class="ok">concluída</i></li>
+                    <li>10:00–10:50 · <b>Bento</b> · <i class="conf">confirmada</i></li>
+                    <li>14:00–14:50 · <b>Aurora</b> · <i class="conf">confirmada</i></li>
+                    <li>15:00–15:50 · <b>Theo</b></li>
+                    <li>16:00–16:50 · <b>Liz</b> · <i class="conf">confirmada</i></li>
+                  </ul>
+                  <p>Parece que você tem um dia cheio hoje!</p>
+                  <p class="via">VIA SUMMARIZER</p>
+                </div>
+                <div class="chips">
+                  <span class="chip chip-azul">Ver amanhã</span><span class="chip">Agenda da semana</span>
+                </div>
+              </div>
+              <div class="chat-footer"><span class="chat-input">Pergunte algo...</span><span class="chat-send" aria-hidden="true">➤</span></div>
+            </div>
+          </div>
+        </figure>
+      </div>
+
+      <ul class="ai-bullets">
+        <li class="reveal">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          <span><b>Agenda na ponta da língua</b> "qual minha agenda de hoje?" e o dia inteiro aparece, com status de cada sessão.</span>
+        </li>
+        <li class="reveal delay-1">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6a2 2 0 0 1 2 2v15a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V5a2 2 0 0 1 2-2z"/><path d="M9 3v2h6V3M10 11h4M10 15h4"/></svg>
+          <span><b>Instrumentos sem caçar pasta</b> última aplicação de VB-MAPP, ABLLS-R, Denver II, COPM, FAMA, Portage, M-CHAT ou Socially Savvy, com domínios e pontuação.</span>
+        </li>
+        <li class="reveal delay-2">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg>
+          <span><b>PEI sempre à mão</b> metas ativas, critério de domínio e progresso de cada paciente.</span>
+        </li>
+        <li class="reveal delay-3">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <span><b>Ninguém fica para trás</b> "quem não vejo há 14 dias?" lista os pacientes sem sessão recente.</span>
+        </li>
+        <li class="reveal delay-4">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M21 20H3"/></svg>
+          <span><b>Evolução em números</b> compare duas aplicações do mesmo instrumento ou dois períodos, lado a lado.</span>
+        </li>
+        <li class="reveal delay-5">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          <span><b>Recorrência sem risco</b> a IA monta o agendamento recorrente, você confirma na tela e as sessões são criadas.</span>
+        </li>
+      </ul>
+
+      <p class="section-disclaimer reveal">O Apoio Inteligente nunca diagnostica e nunca prescreve. Ele lê, organiza e responde, e só cria um agendamento depois que você confirma na tela. A decisão clínica é sempre sua. As conversas exibidas usam pacientes e dados fictícios, apenas para demonstração.</p>
+    </div>
+  </section>
+
+  <!-- ======================= A DOR (dark) ======================= -->
+  <section class="section dark section-dor" id="dor" aria-labelledby="dor-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">O problema</p>
+        <h2 id="dor-title">Sua clínica não cabe mais em <span class="strike">planilha</span>, <span class="strike">WhatsApp</span> e <span class="strike">Drive</span>.</h2>
+        <p class="section-sub">A agenda numa planilha, a evolução num grupo de WhatsApp, o relatório num Drive que ninguém acha. Toda hora gasta procurando informação é uma hora roubada da criança que está na sala esperando. O Apoio junta tudo num fluxo clínico de verdade e devolve esse tempo para o atendimento.</p>
+      </div>
+      <ul class="dor-list">
+        <li class="reveal">
+          <h3>Tudo num lugar só</h3>
+          <p>Um cadastro, um prontuário, uma agenda. Nada se perde entre abas e grupos.</p>
+        </li>
+        <li class="reveal delay-1">
+          <h3>Cada um vê o que deve</h3>
+          <p>Quem é da recepção vê o que é da recepção; quem é clínico vê o que é clínico.</p>
+        </li>
+        <li class="reveal delay-2">
+          <h3>Várias unidades, um sistema</h3>
+          <p>Multi-unidade com cada clínica isolada e organizada, sem planilha paralela.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======================= RELATÓRIOS IA ======================= -->
+  <section class="section section-relatorios" id="relatorios" aria-labelledby="rel-title">
+    <div class="container split">
+      <div class="split-copy reveal">
+        <p class="eyebrow">Relatórios gerados por IA</p>
+        <h2 id="rel-title">O relatório que levava horas agora sai <span class="az">em minutos</span>. E você revisa antes de assinar.</h2>
+        <p>Aplicou VB-MAPP, ABLLS-R ou Socially Savvy? O Apoio transforma a pontuação em um relatório estruturado de 8 seções, gerado por IA a partir dos dados reais da aplicação. Você edita o que quiser, seção por seção, e entrega um documento à altura do seu trabalho.</p>
+        <ul class="check-list">
+          <li><b>VB-MAPP, ABLLS-R e Socially Savvy</b> com geração automática de relatório.</li>
+          <li><b>8 seções editáveis</b>: a IA escreve o rascunho, o profissional dá a palavra final.</li>
+          <li><b>Baseado só nos dados da aplicação</b>. Nada inventado, nada genérico.</li>
+        </ul>
+      </div>
+      <div class="split-visual reveal-scale">
+        <div class="doc-mock" aria-hidden="true">
+          <div class="doc-head"><span class="doc-dot"></span><span class="doc-dot"></span><span class="doc-dot"></span></div>
+          <p class="doc-title">Relatório VB-MAPP · Cecília</p>
+          <div class="doc-sections">
+            <span>1. Identificação</span><span>2. Demanda</span><span>3. Procedimentos</span><span>4. Perfil</span>
+            <span>5. Comparativa</span><span>6. Sumário</span><span>7. Conclusão</span><span>8. Recomendações</span>
+          </div>
+          <div class="doc-lines"><span></span><span></span><span style="width:72%"></span><span></span><span style="width:58%"></span></div>
+          <span class="doc-badge">Gerado por IA, revisado por você</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= INSTRUMENTOS ======================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>VB-MAPP</span><span>ABLLS-R</span><span>DENVER II</span><span>COPM</span><span>FAMA</span><span>PORTAGE</span><span>M-CHAT</span><span>SOCIALLY SAVVY</span>
+      <span>VB-MAPP</span><span>ABLLS-R</span><span>DENVER II</span><span>COPM</span><span>FAMA</span><span>PORTAGE</span><span>M-CHAT</span><span>SOCIALLY SAVVY</span>
+    </div>
+  </div>
+  <section class="section tint section-instrumentos" id="instrumentos" aria-labelledby="inst-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Credibilidade clínica</p>
+        <h2 id="inst-title">Os instrumentos que sua equipe já usa, <span class="az">dentro do sistema</span>.</h2>
+        <p class="section-sub">Aplicação, pontuação e histórico no mesmo lugar. Sem protocolo de papel, sem planilha paralela. Cada aplicação fica registrada e comparável ao longo do tempo.</p>
+      </div>
+      <div class="inst-grid">
+        <article class="inst-card reveal"><span class="inst-tag">ABA</span><h3>VB-MAPP</h3><p>marcos do comportamento verbal</p></article>
+        <article class="inst-card reveal delay-1"><span class="inst-tag">ABA</span><h3>ABLLS-R</h3><p>habilidades básicas de linguagem e aprendizagem</p></article>
+        <article class="inst-card reveal delay-2"><span class="inst-tag">Triagem</span><h3>Denver II</h3><p>triagem do desenvolvimento</p></article>
+        <article class="inst-card reveal delay-3"><span class="inst-tag">Terapia Ocupacional</span><h3>COPM</h3><p>desempenho ocupacional</p></article>
+        <article class="inst-card reveal"><span class="inst-tag">Motricidade</span><h3>FAMA</h3><p>avaliação de habilidades motoras e autonomia</p></article>
+        <article class="inst-card reveal delay-1"><span class="inst-tag">Desenvolvimento</span><h3>Portage</h3><p>inventário de desenvolvimento</p></article>
+        <article class="inst-card reveal delay-2"><span class="inst-tag">Triagem TEA</span><h3>M-CHAT</h3><p>triagem precoce, respondido também pela família no portal</p></article>
+        <article class="inst-card reveal delay-3"><span class="inst-tag">Habilidades Sociais</span><h3>Socially Savvy</h3><p>habilidades sociais</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= GESTÃO ======================= -->
+  <section class="section section-gestao" id="gestao" aria-labelledby="gestao-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Operação completa</p>
+        <h2 id="gestao-title">Da recepção à evolução: a operação inteira <span class="az">em um fluxo só</span>.</h2>
+        <p class="section-sub">O Apoio organiza o dia a dia da clínica do jeito que ele realmente acontece: agenda com salas, sessão registrada na hora, PEI com critério de domínio e prontuário que conta a história completa de cada paciente.</p>
+      </div>
+      <div class="bento">
+        <article class="bento-item bento-wide reveal">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h3M8 17h6"/></svg>
+          <h3>Agenda com salas e recorrência</h3>
+          <p>Monte a semana uma vez, repita sem retrabalho.</p>
+        </article>
+        <article class="bento-item reveal delay-1">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg>
+          <h3>Sessão em tempo real</h3>
+          <p>Cronômetro rodando, notas na hora, nada fica para depois.</p>
+        </article>
+        <article class="bento-item reveal delay-2">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg>
+          <h3>PEI vivo</h3>
+          <p>Metas com alvo, critério de domínio e progresso acompanhado sessão a sessão.</p>
+        </article>
+        <article class="bento-item reveal delay-1">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>
+          <h3>Prontuário e evolução</h3>
+          <p>O histórico clínico organizado, sempre acessível a quem pode acessar.</p>
+        </article>
+        <article class="bento-item bento-wide reveal delay-2">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4M9 11h.01M15 11h.01M12 11h.01M9 14h.01M15 14h.01M12 14h.01"/></svg>
+          <h3>Multi-unidade e perfis</h3>
+          <p>Admin, profissional e recepção, cada um com sua visão; várias unidades, um sistema.</p>
+        </article>
+      </div>
+
+      <div class="app-shots">
+        <figure class="app-shot reveal">
+          <span class="app-shot-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+          <img src="assets/agenda-mes-1200.png"
+               srcset="assets/agenda-mes-1200.png 1x, assets/agenda-mes.png 2x"
+               alt="Tela real do Apoio: agenda mensal da clínica com as sessões de cada dia" width="1200" height="517" loading="lazy">
+          <figcaption>Agenda mensal da clínica, com todas as salas e sessões do mês</figcaption>
+        </figure>
+        <figure class="app-shot reveal delay-1">
+          <span class="app-shot-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+          <img src="assets/agenda-salas-1200.png"
+               srcset="assets/agenda-salas-1200.png 1x, assets/agenda-salas.png 2x"
+               alt="Tela real do Apoio: visão do dia por salas, com horários livres em verde" width="1200" height="517" loading="lazy">
+          <figcaption>Visão do dia por salas: horários livres em verde, prontos para agendar</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FAMÍLIA ======================= -->
+  <section class="section tint section-familia" id="familia" aria-labelledby="fam-title">
+    <div class="container split split-reverse">
+      <div class="split-copy reveal">
+        <p class="eyebrow">Portal da família</p>
+        <h2 id="fam-title">A família acompanha. A clínica <span class="az">ganha confiança</span>.</h2>
+        <p>O responsável entra no portal e vê a agenda, acompanha o progresso e participa do processo sem precisar perguntar no corredor. Transparência que fortalece a adesão ao tratamento e a confiança na sua clínica.</p>
+        <ul class="check-list">
+          <li><b>Agenda e progresso</b> na palma da mão do responsável.</li>
+          <li><b>M-CHAT respondido em casa</b>: a triagem chega pronta para o profissional.</li>
+          <li><b>Tarefas de casa</b>: a generalização continua entre as sessões.</li>
+          <li><b>Exportação de dados (LGPD, Art. 18)</b>: o titular tem direito aos próprios dados, e o portal entrega isso de fábrica.</li>
+        </ul>
+      </div>
+      <div class="split-visual reveal-scale">
+        <img src="assets/mascote-asas-640.png"
+             srcset="assets/mascote-asas-640.png 1x, assets/mascote-asas.png 2x"
+             alt="Mascote do Apoio de asas abertas, celebrando" class="familia-mascote" width="420" height="420" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= SEGURANÇA / LGPD ======================= -->
+  <section class="section section-seguranca" id="seguranca" aria-labelledby="seg-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Segurança e LGPD</p>
+        <h2 id="seg-title">Dados de saúde de criança. <span class="az">Levamos isso a sério</span> de verdade.</h2>
+        <p class="section-sub">LGPD aqui não é banner de cookie: é arquitetura. Antes de qualquer dado chegar à IA, ele é pseudonimizado. As conversas são criptografadas. Cada clínica é isolada das demais. E nada disso funciona sem o consentimento explícito da clínica.</p>
+      </div>
+      <div class="seg-grid">
+        <article class="seg-card reveal">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12h6M12 9v6"/></svg>
+          <h3>Pseudonimização antes da IA</h3><p>A IA trabalha com códigos, não com identidades.</p>
+        </article>
+        <article class="seg-card reveal delay-1">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4M12 15v3"/></svg>
+          <h3>Criptografia AES-256-GCM</h3><p>As conversas do Apoio Inteligente são cifradas.</p>
+        </article>
+        <article class="seg-card reveal delay-2">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>
+          <h3>Consentimento explícito</h3><p>A clínica decide se e quando ativa a IA.</p>
+        </article>
+        <article class="seg-card reveal delay-3">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg>
+          <h3>Isolamento total entre clínicas</h3><p>Seus dados nunca cruzam com os de outra clínica.</p>
+        </article>
+        <article class="seg-card reveal delay-4">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6z"/><path d="M14 3v6h6M9 13h6M9 17h6"/></svg>
+          <h3>Audit log e anonimização</h3><p>Cada acesso registrado, com direito ao esquecimento respeitado.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FORMULÁRIO DE LEAD (dark) ======================= -->
+  <section class="section section-lead" id="demonstracao" aria-labelledby="lead-title">
+    <svg class="cloud-divider to-navy" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,90 L0,52 C40,20 92,16 132,40 C162,10 232,6 272,34 C312,8 382,4 422,32 C452,12 522,10 562,36 C602,6 672,2 712,30 C752,12 822,8 862,36 C902,10 972,6 1012,34 C1052,14 1122,10 1162,38 C1202,8 1272,6 1312,32 C1352,16 1412,22 1440,46 L1440,90 Z"/>
+    </svg>
+    <div class="container lead-grid lead-inner">
+      <div class="lead-copy reveal">
+        <p class="eyebrow">Demonstração</p>
+        <h2 id="lead-title">Veja o Apoio funcionando <span class="am">com a rotina da sua clínica</span>.</h2>
+        <p>Em uma demonstração ao vivo, mostramos o Apoio Inteligente respondendo, o relatório saindo e a agenda da sua equipe organizada, com cenários do tamanho da sua clínica. Sem compromisso, sem script decorado. Preencha e a gente entra em contato.</p>
+        <img src="assets/mascote-640.png"
+             srcset="assets/mascote-640.png 1x, assets/mascote.png 2x"
+             alt="" aria-hidden="true" class="lead-mascote" width="240" height="240" loading="lazy">
+      </div>
+      <form class="lead-form reveal-scale" id="lead-form" novalidate>
+        <div class="field">
+          <label for="f-nome">Nome</label>
+          <input type="text" id="f-nome" name="nome" autocomplete="name" required placeholder="Seu nome">
+        </div>
+        <div class="field">
+          <label for="f-email">E-mail</label>
+          <input type="email" id="f-email" name="email" autocomplete="email" required placeholder="voce@suaclinica.com.br">
+        </div>
+        <div class="field">
+          <label for="f-telefone">Telefone (WhatsApp)</label>
+          <input type="tel" id="f-telefone" name="telefone" autocomplete="tel" required placeholder="(11) 90000-0000">
+        </div>
+        <div class="field">
+          <label for="f-pacientes">Número de pacientes da clínica</label>
+          <select id="f-pacientes" name="pacientes" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="ate-20">Até 20</option>
+            <option value="21-50">21–50</option>
+            <option value="51-100">51–100</option>
+            <option value="100+">Mais de 100</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-full">Agendar minha demonstração</button>
+        <p class="form-feedback" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ======================= RODAPÉ ======================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#topo" class="brand">
+          <img src="assets/logo-96.png" srcset="assets/logo-96.png 1x, assets/logo-320.png 2x" alt="Logo do Apoio Software" width="40" height="40">
+          <span class="brand-name"><strong>Apoio</strong> Software</span>
+        </a>
+        <p>Software completo para avaliações multidisciplinares, gestão terapêutica e engajamento familiar no autismo e neurodesenvolvimento.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Produto">
+        <h4>Produto</h4>
+        <a href="#apoio-inteligente">Apoio Inteligente</a>
+        <a href="#gestao">Recursos Clínicos</a>
+        <a href="#familia">Portal da Família</a>
+        <a href="#instrumentos">Avaliações (VB-MAPP, ABLLS-R, Denver e mais)</a>
+      </nav>
+      <nav class="footer-nav" aria-label="Empresa">
+        <h4>Empresa</h4>
+        <a href="sobre.html">Sobre nós</a>
+        <a href="#demonstracao">Contato</a>
+        <a href="termos-de-uso.html">Termos de Uso</a>
+        <a href="politica-de-privacidade.html">Política de Privacidade (LGPD)</a>
+        <a href="politica-de-cookies.html">Política de Cookies</a>
+      </nav>
+      <nav class="footer-nav" aria-label="Contato">
+        <h4>Contato</h4>
+        <a href="mailto:contato@apoiosoftware.com.br">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          contato@apoiosoftware.com.br</a>
+        <a href="https://instagram.com/apoiosoftware.aba" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          @apoiosoftware.aba</a>
+      </nav>
+    </div>
+    <div class="container footer-disclaimers">
+      <p>A IA do Apoio não diagnostica, não prescreve e não substitui o julgamento clínico. Quem decide é sempre o profissional. O Apoio Inteligente lê e organiza dados já registrados pela sua equipe e não edita nem apaga informações. Agendamentos sugeridos pela IA só são criados após confirmação do profissional na tela. Os relatórios gerados por IA são rascunhos estruturados a partir dos dados da aplicação. A revisão e a assinatura são sempre do profissional responsável. As conversas exibidas neste site usam pacientes e dados fictícios, apenas para demonstração.</p>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Apoio Software LTDA · CNPJ 66.054.363/0001-18 · Todos os direitos reservados.</p>
+        <div class="footer-mini">
+          <a href="termos-de-uso.html">Termos de Uso</a>
+          <a href="politica-de-privacidade.html">Privacidade</a>
+          <a href="politica-de-cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

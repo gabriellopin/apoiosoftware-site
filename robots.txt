@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://apoiosoftware.com.br/sitemap.xml
