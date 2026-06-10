@@ -235,30 +235,6 @@ a:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; border
   padding-bottom: 4.5rem;
 }
 
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: .55rem;
-  font-family: var(--mono);
-  font-size: .73rem;
-  font-weight: 600;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--amarelo);
-  border: 1px solid rgba(255,180,0,.35);
-  background: rgba(255,180,0,.07);
-  padding: .5rem 1.1rem;
-  border-radius: 999px;
-  margin-bottom: 1.6rem;
-}
-.badge::before {
-  content: "";
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: var(--amarelo);
-  box-shadow: 0 0 10px var(--amarelo);
-}
-
 .hero h1 { color: #fff; }
 
 .hero-sub {
@@ -269,16 +245,16 @@ a:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; border
 }
 .hero-sub em { font-style: normal; font-weight: 600; color: var(--azul-claro); }
 
-.hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.4rem; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.2rem; }
 
-.microprova {
-  margin-top: 2.4rem;
-  font-size: .85rem;
-  font-weight: 500;
-  color: var(--texto-dark-sub);
+/* faixa de ferramentas dentro do hero */
+.marquee-hero {
+  margin-top: 2.2rem;
   max-width: 560px;
+  border-radius: 14px;
+  transform: rotate(-1.2deg);
+  box-shadow: 0 14px 36px -14px rgba(255, 180, 0, .45);
 }
-.disclaimer-hero { margin-top: .7rem; font-size: .78rem; color: rgba(169,187,216,.6); }
 
 /* ---------- Assinatura: borda de nuvem ---------- */
 .cloud-divider {
@@ -399,15 +375,6 @@ a:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; border
 .msg.bot .conf { font-style: normal; color: var(--azul); font-weight: 600; }
 .msg.bot .warn { font-style: normal; color: #C77700; font-weight: 700; }
 .msg.bot .up { color: var(--ok); }
-.via {
-  margin-top: .5rem;
-  font-family: var(--mono);
-  font-size: .58rem;
-  font-weight: 600;
-  letter-spacing: .1em;
-  color: #9AA8C0;
-}
-
 /* metas do PEI com barra de progresso */
 .goals { counter-reset: meta; }
 .goals li { display: grid; gap: .18rem; margin-bottom: .5rem; padding-left: 0 !important; }
@@ -562,18 +529,7 @@ a:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; border
   font-weight: 700;
   color: var(--navy);
   margin-bottom: 1.1rem;
-  font-size: .92rem;
-  display: flex;
-  flex-direction: column;
-  gap: .3rem;
-}
-/* rótulo do agente real que responde (arquitetura verdadeira do produto) */
-.agent-tag {
-  font-family: var(--mono);
-  font-size: .64rem;
-  font-weight: 600;
-  letter-spacing: .14em;
-  color: var(--azul);
+  font-size: .95rem;
 }
 .phone-card .phone {
   box-shadow:
@@ -725,33 +681,64 @@ a:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; border
   gap: 1.1rem;
 }
 .inst-card {
+  position: relative;
+  overflow: hidden;
   background: var(--branco);
   border: 1px solid var(--borda);
   border-radius: var(--raio);
-  padding: 1.6rem 1.4rem 1.4rem;
-  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  padding: 1.9rem 1.5rem 1.6rem;
+  transition: transform .35s cubic-bezier(.22,1,.36,1), border-color .35s ease, box-shadow .35s ease;
+}
+/* varredura de gradiente no topo */
+.inst-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--azul), var(--amarelo));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .45s cubic-bezier(.22,1,.36,1);
+}
+/* nuvem da logo flutuando no canto */
+.inst-card::after {
+  content: "";
+  position: absolute;
+  right: -14px; bottom: -16px;
+  width: 86px; height: 86px;
+  background: url("../assets/logo-96.png") no-repeat center / contain;
+  opacity: .07;
+  transform: rotate(-10deg);
+  transition: opacity .4s ease, transform .5s cubic-bezier(.22,1,.36,1);
+  pointer-events: none;
 }
 .inst-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px) rotate(-.6deg);
   border-color: var(--azul);
-  box-shadow: 0 20px 44px -18px rgba(27,111,232,.30);
+  box-shadow: 0 24px 48px -18px rgba(27,111,232,.32);
 }
-/* tag de disciplina — informação, não decoração */
-.inst-tag {
+.inst-card:hover::before { transform: scaleX(1); }
+.inst-card:hover::after { opacity: .22; transform: rotate(4deg) translateY(-6px) scale(1.08); }
+.inst-card h3 {
   display: inline-block;
-  font-family: var(--mono);
-  font-size: .62rem;
-  font-weight: 600;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--azul);
-  background: var(--azul-chip);
-  border-radius: 999px;
-  padding: .25rem .65rem;
-  margin-bottom: 1.3rem;
+  position: relative;
+  color: var(--navy);
+  font-size: 1.18rem;
 }
-.inst-card h3 { color: var(--navy); font-size: 1.12rem; }
-.inst-card p { font-size: .86rem; color: var(--texto-suave); margin-top: .35rem; line-height: 1.5; }
+/* sublinhado amarelo que desliza sob o nome */
+.inst-card h3::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -5px;
+  width: 100%; height: 3px;
+  border-radius: 3px;
+  background: var(--amarelo);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s cubic-bezier(.22,1,.36,1) .08s;
+}
+.inst-card:hover h3::after { transform: scaleX(1); }
+.inst-card p { font-size: .88rem; color: var(--texto-suave); margin-top: .7rem; line-height: 1.5; }
 
 /* ---------- Telas reais do produto ---------- */
 .app-shots {
