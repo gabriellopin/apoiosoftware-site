@@ -31,7 +31,7 @@
         <a href="#seguranca">LGPD</a>
       </nav>
       <a href="https://portal.apoiosoftware.com.br" class="btn btn-outline btn-header btn-entrar">Entrar</a>
-      <a href="#demonstracao" class="btn btn-primary btn-header">Quero uma demonstração</a>
+      <a href="#demonstracao" class="btn btn-primary btn-header"><span class="cta-longo">Quero uma demonstração</span><span class="cta-curto">Agendar demo</span></a>
       <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -120,6 +120,7 @@
         <p class="section-sub">É o seu assistente dentro do sistema. Ele conhece a agenda, as sessões, os instrumentos aplicados e as metas de PEI (Plano Educacional Individualizado) dos seus pacientes. Ele responde em segundos, do jeito que você perguntaria a um colega. Só dados da sua clínica, sempre sob seu controle.</p>
       </div>
 
+      <p class="rail-hint">Deslize para o lado para ver as 5 conversas →</p>
       <div class="phones-rail" tabindex="0" aria-label="Exemplos de conversas com o Apoio Inteligente. Role para o lado">
 
         <!-- Conversa 2: VB-MAPP -->
@@ -286,7 +287,6 @@
           </div>
         </figure>
       </div>
-      <p class="rail-hint">Deslize para o lado para ver as 5 conversas →</p>
 
       <ul class="ai-bullets">
         <li class="reveal">
@@ -424,7 +424,7 @@
           <h3>Prontuário e evolução</h3>
           <p>O histórico clínico organizado, sempre acessível a quem pode acessar.</p>
         </article>
-        <article class="bento-item bento-wide reveal delay-2">
+        <article class="bento-item reveal delay-2">
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4M9 11h.01M15 11h.01M12 11h.01M9 14h.01M15 14h.01M12 14h.01"/></svg>
           <h3>Multi-unidade e perfis</h3>
           <p>Admin, profissional e recepção, cada um com sua visão; várias unidades, um sistema.</p>
@@ -519,8 +519,9 @@
              srcset="assets/mascote-640.webp 1x, assets/mascote.webp 2x"
              alt="" aria-hidden="true" class="lead-mascote" width="240" height="240" loading="lazy">
       </div>
-      <form class="lead-form reveal-scale" id="lead-form" action="https://formsubmit.co/contato@apoiosoftware.com.br" method="POST" novalidate>
+      <form class="lead-form reveal-scale" id="lead-form" action="https://formsubmit.co/contato@apoiosoftware.com.br" method="POST">
         <input type="hidden" name="_subject" value="Novo lead do site Apoio">
+        <input type="hidden" name="_next" value="https://apoiosoftware.com.br/?enviado=1#demonstracao">
         <input type="hidden" name="_template" value="table">
         <div class="field">
           <label for="f-nome">Nome</label>

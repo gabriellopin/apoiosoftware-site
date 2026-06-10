@@ -122,14 +122,23 @@
   /* ---------- Formulário de lead ---------- */
   var form = document.getElementById('lead-form');
   if (form) {
+    // com JS ativo, a validação customizada assume; sem JS, vale a nativa
+    form.noValidate = true;
     var feedback = form.querySelector('.form-feedback');
+
+    // retorno do envio sem JS (FormSubmit redireciona com ?enviado=1)
+    if (window.location.search.indexOf('enviado=1') !== -1) {
+      feedback.textContent = 'Recebido. Vamos entrar em contato em breve.';
+    }
 
     // máscara de telefone brasileira (não reformata ao apagar, evitando o
     // loop de backspace no hífen)
     var tel = document.getElementById('f-telefone');
     tel.addEventListener('input', function (e) {
       if (e.inputType && e.inputType.indexOf('delete') === 0) return;
-      var d = tel.value.replace(/\D/g, '').slice(0, 11);
+      var d = tel.value.replace(/\D/g, '');
+      if (d.length > 11 && d.indexOf('55') === 0) d = d.slice(2);
+      d = d.slice(0, 11);
       if (d.length > 6) tel.value = '(' + d.slice(0, 2) + ') ' + d.slice(2, 7) + '-' + d.slice(7);
       else if (d.length > 2) tel.value = '(' + d.slice(0, 2) + ') ' + d.slice(2);
       else tel.value = d;

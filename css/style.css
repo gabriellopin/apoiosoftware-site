@@ -23,7 +23,7 @@
   --texto: #13294B;              /* tinta */
   --texto-suave: #54657F;
   --texto-dark-sub: #A9BBD8;     /* texto secundário sobre céu-noite */
-  --ok: #1F9D55;
+  --ok: #177A45;
   --borda: #E2EAF6;
   --borda-dark: rgba(255,255,255,.13);
   --raio: 22px;
@@ -130,6 +130,7 @@ h2 { font-size: clamp(1.9rem, 3.5vw, 2.8rem); }
   display: inline-flex;
   align-items: center;
   gap: .5rem;
+  white-space: nowrap;
   font-family: var(--corpo);
   font-weight: 700;
   font-size: .95rem;
@@ -161,6 +162,7 @@ h2 { font-size: clamp(1.9rem, 3.5vw, 2.8rem); }
 }
 .btn-outline:hover { border-color: var(--azul); color: var(--azul); transform: translateY(-2px); }
 .btn-lg { padding: 1.05rem 2.2rem; font-size: 1rem; }
+.cta-curto { display: none; }
 .btn-full { width: 100%; justify-content: center; }
 .btn:focus-visible { outline: 3px solid var(--azul-vivo); outline-offset: 2px; }
 a:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; border-radius: 4px; }
@@ -390,7 +392,7 @@ a:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; border
 .msg.bot b { color: var(--navy); }
 .msg.bot .ok { font-style: normal; color: var(--ok); font-weight: 600; }
 .msg.bot .conf { font-style: normal; color: var(--azul); font-weight: 600; }
-.msg.bot .warn { font-style: normal; color: #C77700; font-weight: 700; }
+.msg.bot .warn { font-style: normal; color: #A36200; font-weight: 700; }
 .msg.bot .up { color: var(--ok); }
 /* metas do PEI com barra de progresso */
 .goals { counter-reset: meta; }
@@ -1068,7 +1070,7 @@ a:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; border
 .footer-nav .ico { width: 16px; height: 16px; stroke: var(--texto-dark-sub); }
 .footer-nav a:hover .ico { stroke: var(--amarelo); }
 .footer-disclaimers { border-top: 1px solid var(--borda-dark); padding-top: 1.6rem; }
-.footer-disclaimers p { font-size: .76rem; color: rgba(169,187,216,.6); }
+.footer-disclaimers p { font-size: .78rem; color: var(--texto-dark-sub); }
 .footer-bottom {
   margin-top: 1rem;
   display: flex;
@@ -1126,6 +1128,8 @@ a:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; border
   .main-nav { display: none; }
   .header-inner { gap: .6rem; }
   .btn-header { padding: .5rem .85rem; font-size: .76rem; }
+  .btn-header .cta-longo { display: none; }
+  .btn-header .cta-curto { display: inline; }
   .btn-entrar { margin-left: auto; }
   .nav-toggle { display: block; margin-left: .1rem; }
   .main-nav.open {
@@ -1140,6 +1144,10 @@ a:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; border
     gap: 1rem;
   }
   .section { padding: 4rem 0; }
+  .section-dor { padding: 0; }
+  .section-lead { padding-top: 0; }
+  .dor-inner { padding: 3.5rem 0 4rem; }
+  .section-lead .lead-inner { padding-top: 3.5rem; }
   .hero { padding-top: 3.5rem; }
   .phone { width: 280px; }
   .phone-screen { height: 560px; }
@@ -1164,6 +1172,6 @@ a:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; border
   .marquee-track { animation: none; }
 }
 
-@media (max-width: 470px) {
+@media (max-width: 560px) {
   .brand-name { display: none; }
 }
