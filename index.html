@@ -13,6 +13,8 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
   <!-- ======================= HEADER ======================= -->
   <header class="site-header" id="topo">
     <div class="container header-inner">
@@ -36,7 +38,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="conteudo">
 
   <!-- ======================= HERO ======================= -->
   <section class="hero" aria-labelledby="hero-title">
@@ -49,9 +51,13 @@
         <h1 id="hero-title" class="reveal delay-1">O primeiro sistema de acompanhamento terapêutico com <span class="am">Inteligência Artificial</span>.</h1>
         <div class="marquee marquee-hero reveal delay-2" aria-label="Principais ferramentas do Apoio">
           <div class="marquee-track">
-            <span>APOIO INTELIGENTE</span><span>RELATÓRIOS COM IA</span><span>AGENDA</span><span>PEI</span><span>PORTAL DA FAMÍLIA</span><span>VB-MAPP</span><span>ABLLS-R</span><span>DENVER II</span><span>COPM</span><span>FAMA</span><span>PORTAGE</span><span>M-CHAT</span><span>SOCIALLY SAVVY</span>
-            <span>APOIO INTELIGENTE</span><span>RELATÓRIOS COM IA</span><span>AGENDA</span><span>PEI</span><span>PORTAL DA FAMÍLIA</span><span>VB-MAPP</span><span>ABLLS-R</span><span>DENVER II</span><span>COPM</span><span>FAMA</span><span>PORTAGE</span><span>M-CHAT</span><span>SOCIALLY SAVVY</span>
+            <div class="marquee-group"><span>APOIO INTELIGENTE</span><span>RELATÓRIOS COM IA</span><span>AGENDA</span><span>PEI</span><span>PORTAL DA FAMÍLIA</span><span>VB-MAPP</span><span>ABLLS-R</span><span>DENVER II</span><span>COPM</span><span>FAMA</span><span>PORTAGE</span><span>M-CHAT</span><span>SOCIALLY SAVVY</span></div>
+            <div class="marquee-group" aria-hidden="true"><span>APOIO INTELIGENTE</span><span>RELATÓRIOS COM IA</span><span>AGENDA</span><span>PEI</span><span>PORTAL DA FAMÍLIA</span><span>VB-MAPP</span><span>ABLLS-R</span><span>DENVER II</span><span>COPM</span><span>FAMA</span><span>PORTAGE</span><span>M-CHAT</span><span>SOCIALLY SAVVY</span></div>
           </div>
+          <button class="marquee-pause" type="button" aria-pressed="false" aria-label="Pausar a faixa de ferramentas">
+            <svg class="ico-pause" viewBox="0 0 12 12" aria-hidden="true"><rect x="1" y="1" width="3.5" height="10" rx="1"/><rect x="7.5" y="1" width="3.5" height="10" rx="1"/></svg>
+            <svg class="ico-play" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.5l8 4.5-8 4.5z"/></svg>
+          </button>
         </div>
         <div class="hero-ctas reveal delay-3">
           <a href="#demonstracao" class="btn btn-primary btn-lg">Quero uma demonstração</a>
@@ -94,8 +100,8 @@
           </div>
         </div>
         <img class="hero-mascote" data-parallax="0.05"
-             src="assets/mascote-640.png"
-             srcset="assets/mascote-640.png 1x, assets/mascote.png 2x"
+             src="assets/mascote-640.webp"
+             srcset="assets/mascote-640.webp 1x, assets/mascote.webp 2x"
              alt="Mascote do Apoio: arara azul e amarela sorridente" width="250" height="250">
       </div>
     </div>
@@ -111,7 +117,7 @@
       <div class="section-head reveal">
         <p class="eyebrow">Apoio Inteligente</p>
         <h2 id="ai-title">Pergunte. Ele responde <span class="az">com os dados da sua clínica</span>.</h2>
-        <p class="section-sub">É o seu assistente dentro do sistema. Ele conhece a agenda, as sessões, os instrumentos aplicados e as metas de PEI dos seus pacientes. Ele responde em segundos, do jeito que você perguntaria a um colega. Só dados da sua clínica, sempre sob seu controle.</p>
+        <p class="section-sub">É o seu assistente dentro do sistema. Ele conhece a agenda, as sessões, os instrumentos aplicados e as metas de PEI (Plano Educacional Individualizado) dos seus pacientes. Ele responde em segundos, do jeito que você perguntaria a um colega. Só dados da sua clínica, sempre sob seu controle.</p>
       </div>
 
       <div class="phones-rail" tabindex="0" aria-label="Exemplos de conversas com o Apoio Inteligente. Role para o lado">
@@ -280,6 +286,7 @@
           </div>
         </figure>
       </div>
+      <p class="rail-hint">Deslize para o lado para ver as 5 conversas →</p>
 
       <ul class="ai-bullets">
         <li class="reveal">
@@ -314,9 +321,10 @@
 
   <!-- ======================= A DOR (dark) ======================= -->
   <section class="section dark section-dor" id="dor" aria-labelledby="dor-title">
-    <div class="container">
+    <svg class="cloud-divider to-navy" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,90 L0,52 C40,20 92,16 132,40 C162,10 232,6 272,34 C312,8 382,4 422,32 C452,12 522,10 562,36 C602,6 672,2 712,30 C752,12 822,8 862,36 C902,10 972,6 1012,34 C1052,14 1122,10 1162,38 C1202,8 1272,6 1312,32 C1352,16 1412,22 1440,46 L1440,90 Z"/></svg>
+    <div class="container dor-inner">
       <div class="section-head reveal">
-        <p class="eyebrow">O problema</p>
+        <p class="eyebrow">Antes do Apoio</p>
         <h2 id="dor-title">Sua clínica não cabe mais em <span class="strike">planilha</span>, <span class="strike">WhatsApp</span> e <span class="strike">Drive</span>.</h2>
         <p class="section-sub">A agenda numa planilha, a evolução num grupo de WhatsApp, o relatório num Drive que ninguém acha. Toda hora gasta procurando informação é uma hora roubada da criança que está na sala esperando. O Apoio junta tudo num fluxo clínico de verdade e devolve esse tempo para o atendimento.</p>
       </div>
@@ -335,6 +343,7 @@
         </li>
       </ul>
     </div>
+    <svg class="cloud-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,90 L0,52 C40,20 92,16 132,40 C162,10 232,6 272,34 C312,8 382,4 422,32 C452,12 522,10 562,36 C602,6 672,2 712,30 C752,12 822,8 862,36 C902,10 972,6 1012,34 C1052,14 1122,10 1162,38 C1202,8 1272,6 1312,32 C1352,16 1412,22 1440,46 L1440,90 Z"/></svg>
   </section>
 
   <!-- ======================= RELATÓRIOS IA ======================= -->
@@ -369,7 +378,7 @@
   <section class="section tint section-instrumentos" id="instrumentos" aria-labelledby="inst-title">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow">Credibilidade clínica</p>
+        <p class="eyebrow">8 instrumentos integrados</p>
         <h2 id="inst-title">Os instrumentos que sua equipe já usa, <span class="az">dentro do sistema</span>.</h2>
         <p class="section-sub">Aplicação, pontuação e histórico no mesmo lugar. Sem protocolo de papel, sem planilha paralela. Cada aplicação fica registrada e comparável ao longo do tempo.</p>
       </div>
@@ -390,7 +399,7 @@
   <section class="section section-gestao" id="gestao" aria-labelledby="gestao-title">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow">Operação completa</p>
+        <p class="eyebrow">Da agenda ao prontuário</p>
         <h2 id="gestao-title">Da recepção à evolução: a operação inteira <span class="az">em um fluxo só</span>.</h2>
         <p class="section-sub">O Apoio organiza o dia a dia da clínica do jeito que ele realmente acontece: agenda com salas, sessão registrada na hora, PEI com critério de domínio e prontuário que conta a história completa de cada paciente.</p>
       </div>
@@ -456,8 +465,8 @@
         </ul>
       </div>
       <div class="split-visual reveal-scale">
-        <img src="assets/mascote-asas-640.png"
-             srcset="assets/mascote-asas-640.png 1x, assets/mascote-asas.png 2x"
+        <img src="assets/mascote-asas-640.webp"
+             srcset="assets/mascote-asas-640.webp 1x, assets/mascote-asas.webp 2x"
              alt="Mascote do Apoio de asas abertas, celebrando" class="familia-mascote" width="420" height="420" loading="lazy">
       </div>
     </div>
@@ -506,11 +515,13 @@
         <p class="eyebrow">Demonstração</p>
         <h2 id="lead-title">Veja o Apoio funcionando <span class="am">com a rotina da sua clínica</span>.</h2>
         <p>Em uma demonstração ao vivo, mostramos o Apoio Inteligente respondendo, o relatório saindo e a agenda da sua equipe organizada, com cenários do tamanho da sua clínica. Sem compromisso, sem script decorado. Preencha e a gente entra em contato.</p>
-        <img src="assets/mascote-640.png"
-             srcset="assets/mascote-640.png 1x, assets/mascote.png 2x"
+        <img src="assets/mascote-640.webp"
+             srcset="assets/mascote-640.webp 1x, assets/mascote.webp 2x"
              alt="" aria-hidden="true" class="lead-mascote" width="240" height="240" loading="lazy">
       </div>
-      <form class="lead-form reveal-scale" id="lead-form" novalidate>
+      <form class="lead-form reveal-scale" id="lead-form" action="https://formsubmit.co/contato@apoiosoftware.com.br" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Novo lead do site Apoio">
+        <input type="hidden" name="_template" value="table">
         <div class="field">
           <label for="f-nome">Nome</label>
           <input type="text" id="f-nome" name="nome" autocomplete="name" required placeholder="Seu nome">
@@ -534,6 +545,7 @@
           </select>
         </div>
         <button type="submit" class="btn btn-primary btn-lg btn-full">Agendar minha demonstração</button>
+        <p class="form-micro">Ao enviar, você concorda com a <a href="politica-de-privacidade.html">Política de Privacidade</a>. Retornamos em até 1 dia útil.</p>
         <p class="form-feedback" role="status" aria-live="polite"></p>
       </form>
     </div>

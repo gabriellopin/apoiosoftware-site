@@ -88,6 +88,17 @@
     chats.forEach(function (c) { obsChat.observe(c); });
   }
 
+  /* ---------- Pausa do marquee (WCAG 2.2.2) ---------- */
+  var pausa = document.querySelector('.marquee-pause');
+  if (pausa) {
+    pausa.addEventListener('click', function () {
+      var track = pausa.parentElement.querySelector('.marquee-track');
+      var pausado = track.classList.toggle('paused');
+      pausa.setAttribute('aria-pressed', String(pausado));
+      pausa.setAttribute('aria-label', pausado ? 'Retomar a faixa de ferramentas' : 'Pausar a faixa de ferramentas');
+    });
+  }
+
   /* ---------- Parallax sutil (transform apenas) ---------- */
   var itensParallax = document.querySelectorAll('[data-parallax]');
   if (!reduzMovimento && itensParallax.length) {
@@ -113,34 +124,55 @@
   if (form) {
     var feedback = form.querySelector('.form-feedback');
 
-    // máscara simples de telefone brasileiro
+    // máscara de telefone brasileira (não reformata ao apagar, evitando o
+    // loop de backspace no hífen)
     var tel = document.getElementById('f-telefone');
-    tel.addEventListener('input', function () {
+    tel.addEventListener('input', function (e) {
+      if (e.inputType && e.inputType.indexOf('delete') === 0) return;
       var d = tel.value.replace(/\D/g, '').slice(0, 11);
       if (d.length > 6) tel.value = '(' + d.slice(0, 2) + ') ' + d.slice(2, 7) + '-' + d.slice(7);
       else if (d.length > 2) tel.value = '(' + d.slice(0, 2) + ') ' + d.slice(2);
       else tel.value = d;
     });
 
+    function erroDoCampo(campo) {
+      var v = campo.value.trim();
+      if (campo.name === 'nome') {
+        if (!v) return 'Informe seu nome.';
+        if (!/\p{L}/u.test(v)) return 'O nome precisa conter letras.';
+      }
+      if (campo.name === 'email' && (!v || !campo.checkValidity())) return 'Informe um e-mail válido.';
+      if (campo.name === 'telefone' && v.replace(/\D/g, '').length < 10) return 'Informe o telefone com DDD.';
+      if (campo.name === 'pacientes' && !v) return 'Selecione uma faixa.';
+      return '';
+    }
+
+    function valida() {
+      var primeiroErro = null;
+      form.querySelectorAll('.field input, .field select').forEach(function (campo) {
+        var aviso = campo.parentElement.querySelector('.field-error');
+        if (!aviso) {
+          aviso = document.createElement('span');
+          aviso.className = 'field-error';
+          campo.parentElement.appendChild(aviso);
+        }
+        var msg = erroDoCampo(campo);
+        campo.classList.toggle('invalid', !!msg);
+        campo.setAttribute('aria-invalid', msg ? 'true' : 'false');
+        aviso.textContent = msg;
+        if (msg && !primeiroErro) primeiroErro = campo;
+      });
+      return primeiroErro;
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       feedback.classList.remove('error');
       feedback.textContent = '';
 
-      var valido = true;
-      form.querySelectorAll('input, select').forEach(function (campo) {
-        campo.classList.remove('invalid');
-        if (!campo.checkValidity() || !campo.value.trim()) {
-          campo.classList.add('invalid');
-          valido = false;
-        }
-      });
-      var dTel = tel.value.replace(/\D/g, '');
-      if (dTel.length < 10) { tel.classList.add('invalid'); valido = false; }
-
-      if (!valido) {
-        feedback.classList.add('error');
-        feedback.textContent = 'Confira os campos destacados e tente de novo.';
+      var primeiroErro = valida();
+      if (primeiroErro) {
+        primeiroErro.focus();
         return;
       }
 
@@ -165,8 +197,16 @@
         body: JSON.stringify(dados)
       }).then(function (r) {
         if (!r.ok) throw new Error('falha no envio');
-        form.querySelectorAll('input, select').forEach(function (c) { c.disabled = true; });
-        feedback.textContent = 'Recebido. Vamos entrar em contato em breve.';
+        feedback.textContent = 'Recebido. Vamos entrar em contato em breve. ';
+        var refazer = document.createElement('a');
+        refazer.href = '#';
+        refazer.textContent = 'Corrigir e reenviar';
+        refazer.addEventListener('click', function (ev) {
+          ev.preventDefault();
+          botao.disabled = false;
+          feedback.textContent = '';
+        });
+        feedback.appendChild(refazer);
       }).catch(function () {
         botao.disabled = false;
         feedback.classList.add('error');
