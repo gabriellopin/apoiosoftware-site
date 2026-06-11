@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://apoiosoftware.com.br/</loc><priority>1.0</priority></url>
-  <url><loc>https://apoiosoftware.com.br/sobre.html</loc><priority>0.8</priority></url>
-  <url><loc>https://apoiosoftware.com.br/termos-de-uso.html</loc><priority>0.3</priority></url>
-  <url><loc>https://apoiosoftware.com.br/politica-de-privacidade.html</loc><priority>0.3</priority></url>
-  <url><loc>https://apoiosoftware.com.br/politica-de-cookies.html</loc><priority>0.3</priority></url>
+  <url><loc>https://apoiosoftware.com.br/planos</loc><priority>0.9</priority></url>
+  <url><loc>https://apoiosoftware.com.br/sobre</loc><priority>0.8</priority></url>
+  <url><loc>https://apoiosoftware.com.br/termos-de-uso</loc><priority>0.3</priority></url>
+  <url><loc>https://apoiosoftware.com.br/politica-de-privacidade</loc><priority>0.3</priority></url>
+  <url><loc>https://apoiosoftware.com.br/politica-de-cookies</loc><priority>0.3</priority></url>
 </urlset>
