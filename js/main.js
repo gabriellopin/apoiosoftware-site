@@ -28,6 +28,30 @@
     });
   }
 
+  /* ---------- URL limpa: rola até a seção sem deixar #ancora no endereço ---------- */
+  function limpaHash() {
+    history.replaceState(null, '', location.pathname + location.search);
+  }
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href*="#"]');
+    if (!link) return;
+    var href = link.getAttribute('href');
+    var pos = href.indexOf('#');
+    var caminho = href.slice(0, pos);
+    var id = href.slice(pos + 1);
+    if (!id) return;
+    if (caminho && caminho !== location.pathname && !(caminho === '/' && location.pathname === '/')) return;
+    var alvo = document.getElementById(id);
+    if (!alvo) return;
+    e.preventDefault();
+    alvo.scrollIntoView({ behavior: reduzMovimento ? 'auto' : 'smooth' });
+    alvo.setAttribute('tabindex', '-1');
+    alvo.focus({ preventScroll: true });
+    limpaHash();
+  });
+  // chegou de outra página com #ancora: o navegador rola sozinho, só limpamos o endereço
+  if (location.hash) window.addEventListener('load', limpaHash);
+
   /* ---------- Revelação ao rolar ---------- */
   var reveals = document.querySelectorAll('.reveal, .reveal-scale');
   if (reduzMovimento || !('IntersectionObserver' in window)) {
