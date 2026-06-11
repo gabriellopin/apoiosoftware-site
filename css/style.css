@@ -1219,6 +1219,7 @@ a:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; border
 .plano-preco { margin: 1.2rem 0 .2rem; color: var(--navy); }
 .plano-preco .moeda { font-family: var(--corpo); font-weight: 700; font-size: 1.1rem; vertical-align: super; }
 .plano-preco .valor { font-family: var(--display); font-weight: 800; font-size: 3.4rem; letter-spacing: -.02em; }
+.plano-preco .valor-contato { font-size: 2rem; line-height: 3.4rem; display: inline-block; white-space: nowrap; }
 .plano-preco-sub { font-size: .85rem; color: var(--texto-suave); margin-bottom: 1.4rem; }
 .plano-limite {
   display: flex;
