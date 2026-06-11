@@ -131,6 +131,18 @@
       feedback.textContent = 'Recebido. Vamos entrar em contato em breve.';
     }
 
+    // plano escolhido na página de planos chega via ?plano=
+    var mPlano = window.location.search.match(/[?&]plano=(light|premium|pro)/);
+    if (mPlano) {
+      var nomePlano = { light: 'Light', premium: 'Premium', pro: 'Pro' }[mPlano[1]];
+      var campoPlano = document.createElement('input');
+      campoPlano.type = 'hidden';
+      campoPlano.name = 'plano_escolhido';
+      campoPlano.value = nomePlano;
+      form.appendChild(campoPlano);
+      feedback.textContent = 'Plano ' + nomePlano + ' selecionado. Preencha para continuar.';
+    }
+
     // máscara de telefone brasileira (não reformata ao apagar, evitando o
     // loop de backspace no hífen)
     var tel = document.getElementById('f-telefone');
