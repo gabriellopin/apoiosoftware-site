@@ -260,6 +260,21 @@
     });
   }
 
+  /* ---------- Google Analytics (G-LXCXTRMDY5) ----------
+     Só carrega depois do aceite no aviso de cookies (LGPD). */
+  var GA_ID = 'G-LXCXTRMDY5';
+  function carregaAnalytics() {
+    if (window.gtag) return;
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(script);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID, { anonymize_ip: true });
+  }
+
   /* ---------- Aviso de cookies (LGPD) ----------
      Guarda a escolha em localStorage; window.apoioCookiesAceitos
      fica disponível para condicionar futuros scripts de medição. */
@@ -267,6 +282,7 @@
   var escolhaCookies = null;
   try { escolhaCookies = localStorage.getItem(CHAVE_COOKIES); } catch (e) {}
   window.apoioCookiesAceitos = escolhaCookies === 'aceito';
+  if (window.apoioCookiesAceitos) carregaAnalytics();
 
   if (!escolhaCookies) {
     var avisoCookies = document.createElement('div');
@@ -287,6 +303,7 @@
       if (!botao) return;
       try { localStorage.setItem(CHAVE_COOKIES, botao.dataset.cookies); } catch (e2) {}
       window.apoioCookiesAceitos = botao.dataset.cookies === 'aceito';
+      if (window.apoioCookiesAceitos) carregaAnalytics();
       avisoCookies.classList.remove('visivel');
       setTimeout(function () { avisoCookies.remove(); }, 350);
     });
