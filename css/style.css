@@ -1333,3 +1333,35 @@ a:focus-visible { outline: 3px solid var(--amarelo); outline-offset: 2px; border
 @media (max-width: 1020px) {
   .planos-grid { grid-template-columns: 1fr; max-width: 560px; margin-inline: auto; }
 }
+
+/* ======================= Aviso de cookies ======================= */
+.cookie-aviso {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1200;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem 1.2rem;
+  padding: 1rem 1.3rem;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: 0 12px 36px -10px rgba(8, 29, 58, .25);
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+.cookie-aviso.visivel { opacity: 1; transform: none; }
+.cookie-aviso p { margin: 0; font-size: .9rem; color: var(--texto-suave); flex: 1 1 280px; }
+.cookie-aviso a { color: var(--azul); font-weight: 600; }
+.cookie-acoes { display: flex; gap: .6rem; margin-left: auto; }
+.cookie-acoes .btn { padding: .55rem 1.1rem; font-size: .9rem; }
+@media (prefers-reduced-motion: reduce) {
+  .cookie-aviso { transition: none; transform: none; }
+}

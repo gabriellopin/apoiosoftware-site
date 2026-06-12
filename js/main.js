@@ -259,4 +259,40 @@
       });
     });
   }
+
+  /* ---------- Aviso de cookies (LGPD) ----------
+     Guarda a escolha em localStorage; window.apoioCookiesAceitos
+     fica disponível para condicionar futuros scripts de medição. */
+  var CHAVE_COOKIES = 'apoio-consentimento-cookies';
+  var escolhaCookies = null;
+  try { escolhaCookies = localStorage.getItem(CHAVE_COOKIES); } catch (e) {}
+  window.apoioCookiesAceitos = escolhaCookies === 'aceito';
+
+  if (!escolhaCookies) {
+    var avisoCookies = document.createElement('div');
+    avisoCookies.className = 'cookie-aviso';
+    avisoCookies.setAttribute('role', 'region');
+    avisoCookies.setAttribute('aria-label', 'Aviso de cookies');
+    avisoCookies.innerHTML =
+      '<p>Usamos cookies essenciais para o site funcionar e, com o seu aceite, cookies de medição de audiência. ' +
+      'Saiba mais na <a href="/politica-de-cookies">Política de Cookies</a>.</p>' +
+      '<div class="cookie-acoes">' +
+      '<button type="button" class="btn btn-outline" data-cookies="recusado">Recusar</button>' +
+      '<button type="button" class="btn btn-primary" data-cookies="aceito">Aceitar</button>' +
+      '</div>';
+    document.body.appendChild(avisoCookies);
+
+    avisoCookies.addEventListener('click', function (e) {
+      var botao = e.target.closest('[data-cookies]');
+      if (!botao) return;
+      try { localStorage.setItem(CHAVE_COOKIES, botao.dataset.cookies); } catch (e2) {}
+      window.apoioCookiesAceitos = botao.dataset.cookies === 'aceito';
+      avisoCookies.classList.remove('visivel');
+      setTimeout(function () { avisoCookies.remove(); }, 350);
+    });
+
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { avisoCookies.classList.add('visivel'); });
+    });
+  }
 })();
